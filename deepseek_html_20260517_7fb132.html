@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>The Sunday Views | Premium Sponsorship Packages</title>
+  <!-- Google Fonts: Elegant Serif + Modern Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #05070f;
+      font-family: 'Inter', sans-serif;
+      color: #f0f2f5;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* 4K ready background + subtle texture */
+    .prestige-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 10% 20%, rgba(10, 18, 35, 1) 0%, #02040c 100%);
+      z-index: -2;
+    }
+    .prestige-bg::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" opacity="0.03"><path fill="none" d="M0 0h800v800H0z"/><path d="M400 100 L500 200 L400 300 L300 200 Z" fill="%23c5a059" /><circle cx="400" cy="500" r="60" stroke="%23c5a059" stroke-width="1.5" fill="none"/><path d="M200 600 L600 600 M200 620 L600 620" stroke="%23c5a059" stroke-width="0.8"/></svg>');
+      background-repeat: repeat;
+      background-size: 120px;
+      pointer-events: none;
+      opacity: 0.2;
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Header & Logo */
+    .logo-section {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+      padding-bottom: 1.5rem;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF 20%, #E4C580 70%, #C5A059 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .logo-sub {
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c5a059;
+      margin-top: 0.5rem;
+      font-weight: 400;
+      word-spacing: 6px;
+    }
+    .tagline {
+      font-size: 1.1rem;
+      color: #a8b2d1;
+      margin-top: 0.8rem;
+      font-weight: 300;
+    }
+
+    /* stats bar - media authority */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(12, 20, 35, 0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 60px;
+      padding: 1rem 2rem;
+      margin: 2rem 0 3rem;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+    }
+    .stat-item {
+      text-align: center;
+      font-weight: 500;
+    }
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #e4c580;
+      font-family: 'Playfair Display', serif;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #a0abcc;
+    }
+
+    /* section titles */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1.5rem;
+      text-align: center;
+      letter-spacing: -0.3px;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .section-title span {
+      background: linear-gradient(120deg, #ffffff, #e4c580);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      border-bottom: 2px solid #c5a059;
+      padding-bottom: 6px;
+    }
+
+    /* Pricing Grid 3 cols premium */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 2rem;
+    }
+
+    /* Card styling */
+    .card {
+      background: rgba(8, 14, 26, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      box-shadow: 0 20px 35px -15px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(197, 160, 89, 0.6);
+      box-shadow: 0 30px 40px -18px rgba(0,0,0,0.7);
+    }
+    .premium-card {
+      background: linear-gradient(145deg, rgba(15, 24, 45, 0.95), rgba(6, 11, 24, 0.98));
+      border: 1px solid #c5a059;
+      box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+    }
+    .badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #c5a059;
+      color: #0a0c15;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .card-header {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+    .package-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff, #e0c88a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0.8rem 0 0.3rem;
+      color: #f2e2b0;
+    }
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #99a2c2;
+    }
+    .best-for {
+      font-size: 0.8rem;
+      background: rgba(197, 160, 89, 0.15);
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      color: #d4b87a;
+      margin-top: 0.5rem;
+    }
+    .features {
+      margin: 1.5rem 0;
+      list-style: none;
+    }
+    .features li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: #eef2ff;
+    }
+    .features li i {
+      color: #c5a059;
+      width: 20px;
+      font-size: 1rem;
+    }
+    .btn-outline-gold {
+      background: transparent;
+      border: 1.5px solid #c5a059;
+      color: #e9d6a3;
+      padding: 0.7rem 0;
+      width: 100%;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .btn-outline-gold:hover {
+      background: #c5a059;
+      color: #0a0c15;
+      border-color: #c5a059;
+    }
+
+    /* add-ons table style */
+    .addons-grid {
+      background: rgba(6, 12, 22, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(197, 160, 89, 0.25);
+    }
+    .addons-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1.8rem;
+      color: #e4c580;
+    }
+    .addon-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .addon-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px dashed rgba(197, 160, 89, 0.4);
+      padding: 0.7rem 0;
+      font-weight: 500;
+    }
+    .addon-name {
+      font-size: 1rem;
+    }
+    .addon-price {
+      font-weight: 700;
+      color: #f3dd9e;
+      font-size: 1.1rem;
+    }
+
+    /* why choose section */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.02);
+      border-radius: 1.5rem;
+      padding: 1.2rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .why-card i {
+      font-size: 2rem;
+      color: #c5a059;
+      margin-bottom: 0.8rem;
+    }
+    .why-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .why-card p {
+      font-size: 0.85rem;
+      color: #b9c3e6;
+    }
+
+    .contact-block {
+      background: rgba(0,0,0,0.5);
+      border-radius: 2rem;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+      border: 1px solid rgba(197,160,89,0.3);
+    }
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.2rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(197,160,89,0.1);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+    }
+    .contact-item i {
+      color: #c5a059;
+      font-size: 1.2rem;
+    }
+    hr {
+      border-color: rgba(197,160,89,0.2);
+      margin: 2rem 0 0;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 0.75rem;
+      margin-top: 2rem;
+      color: #6e7aa8;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 1.2rem;
+      }
+      .logo {
+        font-size: 2.2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .stats-row {
+        gap: 1rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+    @media (min-width: 2000px) {
+      .container {
+        max-width: 1800px;
+      }
+      .card {
+        padding: 2.5rem;
+      }
+      .package-name {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="prestige-bg"></div>
+<div class="container">
+  <!-- Logo and Branding -->
+  <div class="logo-section">
+    <div class="logo">THE SUNDAY VIEWS</div>
+    <div class="logo-sub">EST. 2018 · JOURNALISM · IMPACT</div>
+    <div class="tagline">Multi-Platform News Network | Weekly Print + Digital Dominance</div>
+  </div>
+
+  <!-- Media metrics: credibility & reach (premium authority) -->
+  <div class="stats-row">
+    <div class="stat-item"><span class="stat-number">1.2M+</span><div class="stat-label">Monthly Digital Reach</div></div>
+    <div class="stat-item"><span class="stat-number">85K+</span><div class="stat-label">Weekly Newspaper Circulation</div></div>
+    <div class="stat-item"><span class="stat-number">350K+</span><div class="stat-label">Engaged Hindi + English Audience</div></div>
+    <div class="stat-item"><span class="stat-number">Political</span><div class="stat-label">Admin & Govt. Access</div></div>
+  </div>
+
+  <!-- SPONSORSHIP PACKAGES SECTION -->
+  <div class="section-title"><span>✦ SPONSORSHIP PACKAGES ✦</span></div>
+  <div class="pricing-grid">
+    <!-- BASIC PACKAGE -->
+    <div class="card">
+      <div class="card-header">
+        <div class="package-name">BASIC PACKAGE</div>
+        <div class="price">₹3,999 – ₹6,999 <small>+ taxes</small></div>
+        <div class="best-for">📍 Local Businesses & Small Promotions</div>
+      </div>
+      <ul class="features">
+        <li><i class="fas fa-check-circle"></i> 1 Instagram Story Promotion <strong>OR</strong></li>
+        <li><i class="fas fa-check-circle"></i> 1 YouTube Community Post</li>
+        <li><i class="fas fa-chart-line"></i> <span>Ideal for: Restaurants, startups, local events</span></li>
+      </ul>
+      <a href="mailto:connect.thesundayviews@gmail.com?subject=Basic%20Package%20Inquiry" class="btn-outline-gold">REQUEST QUOTE →</a>
+    </div>
+
+    <!-- STANDARD PACKAGE -->
+    <div class="card">
+      <div class="card-header">
+        <div class="package-name">STANDARD PACKAGE</div>
+        <div class="price">₹12,000 – ₹25,000 <small>+ taxes</small></div>
+        <div class="best-for">📱 Apps, Startups & Digital Brands</div>
+      </div>
+      <ul class="features">
+        <li><i class="fas fa-check-circle"></i> 1 Sponsored Instagram Reel</li>
+        <li><i class="fas fa-check-circle"></i> 1 YouTube Shorts Promotion</li>
+        <li><i class="fas fa-check-circle"></i> Brand Mention in Caption</li>
+        <li><i class="fas fa-check-circle"></i> Website Mention <em>(Optional)</em></li>
+      </ul>
+      <a href="mailto:connect.thesundayviews@gmail.com?subject=Standard%20Package%20Inquiry" class="btn-outline-gold">CONTACT SALES →</a>
+    </div>
+
+    <!-- PREMIUM PACKAGE - highlighter card -->
+    <div class="card premium-card">
+      <div class="badge">★ PREMIUM CHOICE ★</div>
+      <div class="card-header">
+        <div class="package-name">PREMIUM PACKAGE</div>
+        <div class="price">₹35,000 – ₹1,00,000+</div>
+        <div class="best-for">🏛️ Political Campaigns | Govt. Awareness | Corporate Giants</div>
+      </div>
+      <ul class="features">
+        <li><i class="fas fa-check-circle"></i> Dedicated YouTube Video / News Coverage</li>
+        <li><i class="fas fa-check-circle"></i> Instagram Reel + Stories (Multi-story)</li>
+        <li><i class="fas fa-check-circle"></i> Website Featured Article / Banner Ad</li>
+        <li><i class="fas fa-check-circle"></i> Weekly Newspaper Mention / Full Ad Space</li>
+        <li><i class="fas fa-check-circle"></i> Brand Visibility Across ALL Platforms</li>
+        <li><i class="fas fa-star-of-life"></i> Priority Editorial Consideration</li>
+      </ul>
+      <a href="mailto:connect.thesundayviews@gmail.com?subject=Premium%20Campaign%20Inquiry" class="btn-outline-gold">BOOK PREMIUM CAMPAIGN →</a>
+    </div>
+  </div>
+
+  <!-- ADD-ON SERVICES -->
+  <div class="addons-grid">
+    <div class="addons-title"><i class="fas fa-plus-circle"></i> ADD-ON SERVICES</div>
+    <div class="addon-list">
+      <div class="addon-item"><span class="addon-name"><i class="far fa-clock"></i> Extra Instagram Story</span><span class="addon-price">₹1,500</span></div>
+      <div class="addon-item"><span class="addon-name"><i class="fas fa-video"></i> Extra Reel</span><span class="addon-price">₹5,000</span></div>
+      <div class="addon-item"><span class="addon-name"><i class="fas fa-ad"></i> Website Banner</span><span class="addon-price">₹8,000 / month</span></div>
+      <div class="addon-item"><span class="addon-name"><i class="fas fa-newspaper"></i> Sponsored Article</span><span class="addon-price">₹7,000</span></div>
+      <div class="addon-item"><span class="addon-name"><i class="fas fa-calendar-check"></i> Event Coverage</span><span class="addon-price">Custom Pricing</span></div>
+      <div class="addon-item"><span class="addon-name"><i class="fas fa-microphone-alt"></i> Interview Sponsorship</span><span class="addon-price">₹15,000+</span></div>
+    </div>
+    <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color:#b9af8a;">✧ Mix & match to create your custom media plan ✧</div>
+  </div>
+
+  <!-- WHY BRANDS CHOOSE THE SUNDAY VIEWS -->
+  <div class="section-title"><span>⚡ WHY BRANDS CHOOSE THE SUNDAY VIEWS ⚡</span></div>
+  <div class="why-grid">
+    <div class="why-card"><i class="fas fa-shield-alt"></i><h4>Trusted News Platform</h4><p>Credible journalism with editorial integrity & authenticity</p></div>
+    <div class="why-card"><i class="fas fa-landmark"></i><h4>Political & Administrative Reach</h4><p>Direct access to policy makers, government circles</p></div>
+    <div class="why-card"><i class="fas fa-chart-simple"></i><h4>Multi-Platform Promotion</h4><p>YouTube, Instagram, Web, Print — unified impact</p></div>
+    <div class="why-card"><i class="fas fa-print"></i><h4>Weekly Newspaper Distribution</h4><p>High-value print visibility across regions</p></div>
+    <div class="why-card"><i class="fas fa-language"></i><h4>Engaged Hindi-Speaking Audience</h4><p>Vernacular + bilingual content for deep connect</p></div>
+    <div class="why-card"><i class="fas fa-tv"></i><h4>Digital + Print Exposure</h4><p>Hybrid campaigns maximize recall & trust</p></div>
+  </div>
+
+  <!-- CONTACT & BUSINESS INFO -->
+  <div class="contact-block">
+    <h3 style="font-family: 'Playfair Display'; font-size: 1.8rem; margin-bottom: 0.5rem;">Ready to scale with us?</h3>
+    <p style="margin-bottom: 1rem;">Let’s craft a sponsorship that amplifies your brand across India’s most credible media house.</p>
+    <div class="contact-flex">
+      <div class="contact-item"><i class="fas fa-envelope"></i> connect.thesundayviews@gmail.com</div>
+      <div class="contact-item"><i class="fab fa-youtube"></i> The Sunday Views</div>
+      <div class="contact-item"><i class="fab fa-instagram"></i> @_thesundayviews</div>
+      <div class="contact-item"><i class="fas fa-globe"></i> thesundayviews.com</div>
+    </div>
+    <div style="margin-top: 1.5rem;">
+      <a href="mailto:connect.thesundayviews@gmail.com?subject=Sponsorship%20Enquiry%20-%20Premium%20Package" style="background: #c5a059; color: #0a0c15; padding: 0.8rem 2rem; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 0.5rem;">📩 REQUEST CUSTOM PACKAGE</a>
+    </div>
+  </div>
+
+  <hr>
+  <div class="footer-note">
+    * Pricing varies based on duration, platform scope, and customization. All packages include performance analytics for premium & standard tiers. <br/>
+    © 2025 THE SUNDAY VIEWS — Leadership in political & mainstream media. GST applicable.
+  </div>
+</div>
+</body>
+</html>
